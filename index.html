@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Charles Hanna </title>
-</head>
-<body>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-<h1>I am Charles Hanna</h1>
-<p>A designer and a developer.</p>
+<head>
+    <title>Charles Hanna </title>
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: #999;
+            --link-color: black;
+            --link-hover-color: black;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            margin-top: calc(50vh - 200px);
+
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header__title {
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        .header__text {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        .main__text {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .main__text__link {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .main__text__link:hover {
+            color: var(--link-hover-color);
+        }
+
+        .main__text__link:hover:after {
+            content: " ]"
+        }
+
+        .main__text__link:hover:before {
+            content: "[ "
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <header class="header">
+            <h1 class="header__title">I am Charles Hanna</h1>
+            <p class="header__text">A multidiciplinary designer and developer, based in Montreal.</p>
+        </header>
+        <main>
+            <p class="main__text">you can find all about me on
+                <a class="main__text__link" href="https://www.linkedin.com/in/chrls/" target="_blank">LinkedIn</a>. Checkout my dev work on
+                <a class="main__text__link" href="https://github.com/charlesRepo" target="_blank">Github</a> &
+                <a class="main__text__link" href="https://codepen.io/chrls/" target="_blank">Codepen</a> and my design work on
+                <a class="main__text__link" href="https://www.behance.net/chrls" target="_blank">Behance</a>. Follow me on
+                <a class="main__text__link" href="https://twitter.com/Charles_Hanna" target="_blank">Twitter</a>
+            </p>
+
+        </main>
+    </section>
 
 </body>
+
 </html>

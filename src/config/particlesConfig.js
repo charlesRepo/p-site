@@ -14,7 +14,7 @@ export const particlesOptions = {
     },
     // Particle appearance
     color: {
-      value: '#ffffff',
+      value: '#8a6d3b', // Match icon color
     },
     shape: {
       type: 'circle',
@@ -44,8 +44,8 @@ export const particlesOptions = {
     // Lines connecting particles
     line_linked: {
       enable: true,
-      distance: 150,
-      color: '#ffffff',
+      distance: 120, // Slightly reduced distance for better interaction
+      color: '#8a6d3b', // Match icon color
       opacity: 0.4,
       width: 1,
     },
@@ -67,12 +67,12 @@ export const particlesOptions = {
   },
   // User interaction settings
   interactivity: {
-    detectsOn: 'canvas',
+    detectsOn: 'window',
     events: {
       // Hover effect
       onHover: {
         enable: true,
-        mode: 'grab',
+        mode: ['grab', 'bubble'],
       },
       // Click effect
       onClick: {
@@ -84,14 +84,29 @@ export const particlesOptions = {
     modes: {
       // Hover interaction mode
       grab: {
-        distance: 140,
+        distance: 180,
         line_linked: {
           opacity: 1,
+          width: 1.5,
         },
+      },
+      // Bubble interaction mode
+      bubble: {
+        distance: 200,
+        size: 6,
+        duration: 0.3,
+        opacity: 0.8,
+        speed: 3
       },
       // Click interaction mode
       push: {
-        particles_nb: 4,
+        particles_nb: 6,
+        quantity: 4,
+      },
+      // Repulse interaction mode
+      repulse: {
+        distance: 100,
+        duration: 0.4,
       },
     },
   },

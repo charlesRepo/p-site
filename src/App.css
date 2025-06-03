@@ -18,6 +18,8 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   overflow: hidden;
+  font-size: 0.2rem; /* Further reduced from 0.25rem */
+  line-height: 1.2;
 }
 
 .app {
@@ -30,12 +32,33 @@ body {
 .content {
   position: relative;
   z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: -1;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -46,24 +69,37 @@ body {
 .header__title {
   font-size: 2.5rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: white;
-  transition: color 0.3s ease;
+  text-align: center;
+  font-weight: 700;
 }
 
 .header__text {
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   transition: color 0.3s ease;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header__text {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
 }
 
 .social-link {
@@ -82,9 +118,18 @@ body {
 
 .contact-form {
   background: transparent;
-  padding: 2rem;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
+  padding: 1.5rem 0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  font-size: 0.8rem;
 }
 
 .form-message {
@@ -97,6 +142,8 @@ body {
 .form-success {
   color: var(--link-color);
   background-color: rgba(138, 109, 59, 0.1);
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .form-error {
@@ -177,4 +224,46 @@ textarea {
   top: 0;
   left: 0;
   z-index: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 1024px) {
+  .content::before {
+    left: 10%;
+    width: 80%;
+  }
+  
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .content {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .content::before {
+    left: 0;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
 }

@@ -2,6 +2,9 @@
 
 A modern React-based personal website with interactive particle effects and a clean, minimalist design.
 
+https://charlesrepo.github.io/p-site/
+
+
 ## Features
 
 - Interactive particle background
